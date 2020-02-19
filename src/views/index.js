@@ -1,6 +1,5 @@
 /* eslint-disable */
 
-export { default as PostsView } from './PostsView'
 export { default as AboutView } from './AboutView'
 export { default as AllPostsView } from './AllPostsView'
 export { default as ContactView } from './ContactView'
