@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
+import PostsView from './PostsView'
 
 const scripts = [
   fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js").then(body => body.text()),
@@ -92,32 +93,7 @@ class IndexView extends React.Component {
                     </div>
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
-                    <div className="w-dyn-list">
-                      <div className="w-dyn-items">
-                        <div className="w-dyn-item">
-                          <div className="af-class-post-wrapper">
-                            <div className="af-class-post-content">
-                              <div className="w-row">
-                                <div className="w-col w-col-4 w-col-medium-4"><a href="#" className="af-class-blog-image w-inline-block" /></div>
-                                <div className="w-col w-col-8 w-col-medium-8">
-                                  <a href="#" className="af-class-blog-title-link w-inline-block">
-                                    <h2 className="af-class-blog-title" />
-                                  </a>
-                                  <div className="af-class-details-wrapper">
-                                    <div className="af-class-post-info" />
-                                    <div className="af-class-post-info">|</div><a href="#" className="af-class-post-info af-class-when-link" /></div>
-                                  <div className="af-class-post-summary-wrapper">
-                                    <p className="af-class-post-summary" /><a href="#" className="af-class-read-more-link">Read more...</a></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-dyn-empty">
-                        <p>No items found.</p>
-                      </div>
-                    </div>
+                    <PostsView.Controller />
                     <div className="af-class-button-wrapper"><a href="all-posts.html" className="af-class-button w-button">More posts&nbsp;→</a></div>
                     <div className="af-class-sidebar-on-mobile">
                       <div className="af-class-white-wrapper"><img src="images/photo-1443180236447-432ea00e6ead.jpg" alt className="af-class-circle-profile" />
