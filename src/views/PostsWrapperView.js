@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
+import PostWrapperView from './PostWrapperView'
 
 const scripts = [
 
@@ -59,23 +60,7 @@ class PostsWrapperView extends React.Component {
         <span className="af-view">
           <div className="w-dyn-items">
             <div className="w-dyn-item">
-              <div className="af-class-post-wrapper">
-                <div className="af-class-post-content">
-                  <div className="w-row">
-                    <div className="w-col w-col-4 w-col-medium-4"><a href="#" className="af-class-blog-image w-inline-block" /></div>
-                    <div className="w-col w-col-8 w-col-medium-8">
-                      <a href="#" className="af-class-blog-title-link w-inline-block">
-                        <h2 className="af-class-blog-title" />
-                      </a>
-                      <div className="af-class-details-wrapper">
-                        <div className="af-class-post-info" />
-                        <div className="af-class-post-info">|</div><a href="#" className="af-class-post-info af-class-when-link" /></div>
-                      <div className="af-class-post-summary-wrapper">
-                        <p className="af-class-post-summary" /><a href="#" className="af-class-read-more-link">Read more...</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <PostWrapperView.Controller />
             </div>
           </div>
         </span>
