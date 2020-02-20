@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
+import CollectionListWrapperView from './CollectionListWrapperView'
 import PostsWrapperView from './PostsWrapperView'
 
 const scripts = [
@@ -93,6 +94,7 @@ class IndexView extends React.Component {
                     </div>
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
+                    <CollectionListWrapperView.Controller />
                     <PostsWrapperView.Controller />
                     <div className="af-class-button-wrapper"><a href="all-posts.html" className="af-class-button w-button">More posts&nbsp;→</a></div>
                     <div className="af-class-sidebar-on-mobile">
