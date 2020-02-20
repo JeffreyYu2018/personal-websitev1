@@ -5,15 +5,15 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import './styles';
 import './scripts';
-import IndexView from './views/IndexView';
+import IndexController from './controllers/IndexController';
 import AboutView from './views/AboutView';
 import ContactView from './views/ContactView';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={IndexView} />
-      <Route exact path="/index.html" component={IndexView} />
+      <Route exact path="/" component={IndexController} />
+      <Route exact path="/index.html" component={IndexController} />
       <Route exact path="/contact.html" component={ContactView} />
       <Route exact path="/about.html" component={AboutView} />
     </Switch>
