@@ -57,7 +57,7 @@ class PostsWrapperView extends React.Component {
           @import url(/css/jeff-appfairy-test.webflow.css);
         ` }} />
         <span className="af-view">
-          <div />
+          <div className="af-class-div-block" />
         </span>
       </span>
     )
