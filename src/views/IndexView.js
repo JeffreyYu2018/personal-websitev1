@@ -2,8 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
-import CollectionListWrapperView from './CollectionListWrapperView'
-import PostsWrapperView from './PostsWrapperView'
+import PostContentView from './PostContentView'
 
 const scripts = [
   fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js").then(body => body.text()),
@@ -94,8 +93,7 @@ class IndexView extends React.Component {
                     </div>
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
-                    <CollectionListWrapperView.Controller />
-                    <PostsWrapperView.Controller />
+                    <PostContentView.Controller />
                     <div className="af-class-button-wrapper"><a href="all-posts.html" className="af-class-button w-button">More posts&nbsp;→</a></div>
                     <div className="af-class-sidebar-on-mobile">
                       <div className="af-class-white-wrapper"><img src="images/photo-1443180236447-432ea00e6ead.jpg" alt className="af-class-circle-profile" />

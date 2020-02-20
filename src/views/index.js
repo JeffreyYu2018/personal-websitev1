@@ -1,8 +1,6 @@
 /* eslint-disable */
 
 export { default as PostContentView } from './PostContentView'
-export { default as CollectionListWrapperView } from './CollectionListWrapperView'
-export { default as PostsWrapperView } from './PostsWrapperView'
 export { default as AboutView } from './AboutView'
 export { default as AllPostsView } from './AllPostsView'
 export { default as ContactView } from './ContactView'
