@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
+import PostContentView from './PostContentView'
 
 const scripts = [
 
@@ -57,7 +58,9 @@ class PostsWrapperView extends React.Component {
           @import url(/css/jeff-appfairy-test.webflow.css);
         ` }} />
         <span className="af-view">
-          <div className="af-class-div-block" />
+          <div className="af-class-posts-wrapper">
+            <PostContentView.Controller />
+          </div>
         </span>
       </span>
     )

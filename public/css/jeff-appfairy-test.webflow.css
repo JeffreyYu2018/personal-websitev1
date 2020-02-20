@@ -1,5 +1,5 @@
 .af-view {
-  background-color: #f0f0f0;
+  background-color: #fff;
   font-family: Lato, sans-serif;
   color: #333;
   font-size: 14px;
@@ -341,6 +341,7 @@
 
 .af-view .af-class-post-content {
   padding: 20px;
+  background-color: #fff;
 }
 
 .af-view .af-class-post-summary {
@@ -372,6 +373,7 @@
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
   color: #333;
+  line-height: 135%;
   text-decoration: none;
 }
 
@@ -434,6 +436,10 @@
 
 .af-view .af-class-read-more-link:hover {
   color: #333;
+}
+
+.af-view .af-class-post-summary-wrapper {
+  line-height: 135%;
 }
 
 .af-view .af-class-content-wrapper {
@@ -518,10 +524,47 @@
 .af-view .af-class-details-wrapper {
   margin-top: 8px;
   margin-bottom: 8px;
+  line-height: 135%;
 }
 
-.af-view .af-class-div-block {
+.af-view .af-class-posts-wrapper {
   margin-bottom: 30px;
+}
+
+.af-view .af-class-posts-content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.af-view .af-class-link-block {
+  height: 180px;
+  margin-top: 0px;
+  margin-right: 20px;
+}
+
+.af-view .af-class-body {
+  background-color: #f0f0f0;
+}
+
+.af-view .af-class-image {
+  height: 180px;
+}
+
+.af-view .af-class-text-block {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.af-view .af-class-columns {
+  line-height: 26px;
+}
+
+.af-view .af-class-text-block-2 {
+  line-height: 22px;
+}
+
+.af-view .af-class-text-block-3 {
+  line-height: 22px;
 }
 
 .af-view.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {

@@ -59,7 +59,7 @@ class IndexView extends React.Component {
           @import url(/css/jeff-appfairy-test.webflow.css);
         ` }} />
         <span className="af-view">
-          <div>
+          <div className="af-class-body">
             <div data-collapse="medium" data-animation="default" data-duration={400} className="af-class-navigation-bar w-nav">
               <div className="w-container">
                 <a href="index.html" className="w-nav-brand w--current">
@@ -73,7 +73,7 @@ class IndexView extends React.Component {
             </div>
             <div className="af-class-content-wrapper">
               <div className="w-container">
-                <div className="w-row">
+                <div className="af-class-columns w-row">
                   <div className="w-hidden-small w-hidden-tiny w-col w-col-3">
                     <div className="af-class-white-wrapper"><img src="images/photo-1443180236447-432ea00e6ead.jpg" alt className="af-class-circle-profile" />
                       <p className="af-class-site-description">Denali is a simple responsive blog template. Easily add new posts using the Editor or change layout and design using the Designer.</p>
