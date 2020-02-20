@@ -5,6 +5,5 @@ import PostContentController from './PostContentController'
 
 export default (props) => (
   <IndexView>
-    <post-wrapper />
   </IndexView>
 )
