@@ -10,19 +10,19 @@ const scripts = [
 
 let Controller
 
-class ContactView extends React.Component {
+class BlogView extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
     try {
-      Controller = require('../controllers/ContactController')
+      Controller = require('../controllers/BlogController')
       Controller = Controller.default || Controller
 
       return Controller
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = ContactView
+        Controller = BlogView
 
         return Controller
       }
@@ -46,8 +46,11 @@ class ContactView extends React.Component {
   }
 
   render() {
-    const proxies = Controller !== ContactView ? transformProxies(this.props.children) : {
-
+    const proxies = Controller !== BlogView ? transformProxies(this.props.children) : {
+      'post-image': [],
+      'blog-title': [],
+      'post-info': [],
+      'post-body': [],
     }
 
     return (
@@ -64,7 +67,7 @@ class ContactView extends React.Component {
                 <a href="index.html" className="w-nav-brand">
                   <div className="af-class-site-name">Denali</div>
                 </a>
-                <nav role="navigation" className="af-class-navigation-menu w-nav-menu"><a href="index.html" className="af-class-navigation-link w-nav-link">Home</a><a href="about.html" className="af-class-navigation-link w-nav-link">About</a><a href="blog.html" className="af-class-navigation-link w-nav-link">Blog</a><a href="contact.html" className="af-class-navigation-link w-nav-link w--current">Contact</a></nav>
+                <nav role="navigation" className="af-class-navigation-menu w-nav-menu"><a href="index.html" className="af-class-navigation-link w-nav-link">Home</a><a href="about.html" className="af-class-navigation-link w-nav-link">About</a><a href="blog.html" className="af-class-navigation-link w-nav-link w--current">Blog</a><a href="contact.html" className="af-class-navigation-link w-nav-link">Contact</a></nav>
                 <div className="af-class-menu-button w-nav-button">
                   <div className="w-icon-nav-menu" />
                 </div>
@@ -80,36 +83,30 @@ class ContactView extends React.Component {
                       <h2 className="af-class-small-heading">Featured Posts:</h2>
                       <div className="af-class-feature-posts-list w-dyn-list">
                         <div className="w-dyn-items">
-                          <div className="w-dyn-item"><a href="#" className="af-class-small-post-link" /></div>
+                          <div className="w-dyn-item" />
                         </div>
                         <div className="w-dyn-empty">
                           <p>No items found.</p>
                         </div>
                       </div>
                       <div className="af-class-grey-rule" />
-                      <div className="af-class-social-link-group"><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-03.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-07.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-18.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-09.svg" width={25} alt /></a></div>
+                      <div className="af-class-social-link-group"><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374657704c020dc_social-03.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374650b35c02122_social-07.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374657296c02161_social-18.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e0137465a6e5c020e9_social-09.svg" width={25} alt /></a></div>
                       <p className="af-class-built-with-webflow">Built with <a target="_blank" href="https://webflow.com" className="af-class-webflow-link">Webflow</a></p>
                     </div>
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
                     <div className="af-class-post-wrapper">
+                      {map(proxies['post-image'], props => <div {...{...props, className: `af-class-blog-page-image ${props.className || ''}`}}>{props.children}</div>)}
                       <div className="af-class-post-content">
-                        <div className="af-class-body-copy w-richtext">
-                          <h1>Get in touch</h1>
-                          <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-                        </div>
-                        <div className="af-class-form-wrapper w-form">
-                          <form id="email-form" name="email-form" data-name="Email Form"><label htmlFor="Name">Name</label><input type="text" id="Name" name="Name" data-name="Name" placeholder="Enter your name" maxLength={256} className="af-class-text-field w-input" /><label htmlFor="Email">Email Address</label><input type="email" id="Email" name="Email" data-name="Email" placeholder="Enter your email address" maxLength={256} required className="af-class-text-field w-input" /><label htmlFor="Message">Message</label><textarea id="Message" name="Message" placeholder="Enter your message" maxLength={5000} data-name="Message" required className="af-class-text-field af-class-text-area w-input" defaultValue={""} /><input type="submit" defaultValue="Submit" data-wait="Please wait..." className="af-class-button w-button" /></form>
-                          <div className="af-class-success-message w-form-done">
-                            <p className="af-class-success-text">Thank you! Your submission has been received!</p>
-                          </div>
-                          <div className="w-form-fail">
-                            <p>Oops! Something went wrong while submitting the form</p>
-                          </div>
-                        </div>
+                        {map(proxies['blog-title'], props => <h1 {...props}>{props.children ? props.children : <React.Fragment>Heading</React.Fragment>}</h1>)}
+                        <div className="af-class-details-wrapper">
+                          {map(proxies['post-info'], props => <div {...{...props, className: `af-class-post-info ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>This is some text inside of a div block.</React.Fragment>}</div>)}
+                          <div className="af-class-post-info">|</div><a href="#" className="af-class-post-info af-class-when-link">Text Link</a></div>
+                        <div className="af-class-grey-rule" />
+                        {map(proxies['post-body'], props => <div {...{...props, className: `af-class-body-copy w-richtext ${props.className || ''}`}}>{props.children}</div>)}
                       </div>
                     </div>
+                    <div className="af-class-button-wrapper"><a href="#" className="af-class-button w-button">←&nbsp;All posts</a></div>
                     <div className="af-class-sidebar-on-mobile">
                       <div className="af-class-white-wrapper"><img src="images/photo-1443180236447-432ea00e6ead.jpg" alt className="af-class-circle-profile" />
                         <p className="af-class-site-description">Denali is a simple responsive blog template. Easily add new posts using the Editor or change layout and design using the Designer.</p>
@@ -117,14 +114,14 @@ class ContactView extends React.Component {
                         <h2 className="af-class-small-heading">Featured Posts:</h2>
                         <div className="af-class-feature-posts-list w-dyn-list">
                           <div className="w-dyn-items">
-                            <div className="w-dyn-item"><a href="#" className="af-class-small-post-link" /></div>
+                            <div className="w-dyn-item" />
                           </div>
                           <div className="w-dyn-empty">
                             <p>No items found.</p>
                           </div>
                         </div>
                         <div className="af-class-grey-rule" />
-                        <div className="af-class-social-link-group"><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-03.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-07.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-18.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="images/social-09.svg" width={25} alt /></a></div>
+                        <div className="af-class-social-link-group"><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374657704c020dc_social-03.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374650b35c02122_social-07.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e01374657296c02161_social-18.svg" width={25} alt /></a><a href="#" className="af-class-social-icon-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e4ef3e0507f132c10405130/5e4ef3e0137465a6e5c020e9_social-09.svg" width={25} alt /></a></div>
                         <p className="af-class-built-with-webflow">Built with <a target="_blank" href="https://webflow.com" className="af-class-webflow-link">Webflow</a></p>
                       </div>
                     </div>
@@ -140,6 +137,6 @@ class ContactView extends React.Component {
   }
 }
 
-export default ContactView
+export default BlogView
 
 /* eslint-enable */

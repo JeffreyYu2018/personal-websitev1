@@ -3557,7 +3557,6 @@ Webflow.define('navbar', module.exports = function ($, _) {
   var overlay = '<div class="w-nav-overlay" data-wf-ignore />';
   var namespace = '.w-nav';
   var navbarOpenedButton = 'w--open';
-  var navbarOpenedMenu = 'w--nav-menu-open';
   var navbarOpenedDropdown = 'w--nav-dropdown-open';
   var navbarOpenedDropdownToggle = 'w--nav-dropdown-toggle-open';
   var navbarOpenedDropdownList = 'w--nav-dropdown-list-open';
@@ -3820,13 +3819,21 @@ Webflow.define('navbar', module.exports = function ($, _) {
     };
   }
 
+  function addMenuOpen(i, el) {
+    el.setAttribute('data-nav-menu-open', '');
+  }
+
+  function removeMenuOpen(i, el) {
+    el.removeAttribute('data-nav-menu-open');
+  }
+
   function open(data, immediate) {
     if (data.open) {
       return;
     }
 
     data.open = true;
-    data.menu.addClass(navbarOpenedMenu);
+    data.menu.each(addMenuOpen);
     data.links.addClass(navbarOpenedLink);
     data.dropdowns.addClass(navbarOpenedDropdown);
     data.dropdownToggle.addClass(navbarOpenedDropdownToggle);
@@ -3946,7 +3953,7 @@ Webflow.define('navbar', module.exports = function ($, _) {
         x: 0,
         y: 0
       });
-      data.menu.removeClass(navbarOpenedMenu);
+      data.menu.each(removeMenuOpen);
       data.links.removeClass(navbarOpenedLink);
       data.dropdowns.removeClass(navbarOpenedDropdown);
       data.dropdownToggle.removeClass(navbarOpenedDropdownToggle);

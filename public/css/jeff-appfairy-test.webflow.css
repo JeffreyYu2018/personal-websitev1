@@ -568,6 +568,15 @@
   line-height: 22px;
 }
 
+.af-view .af-class-details-wrapper-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.af-view .af-class-post-content-2 {
+  padding: 20px;
+}
+
 .af-view.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {
   opacity: 0;
   -webkit-transform: translate(0px, 50px);
@@ -708,6 +717,9 @@
   .af-view .af-class-sidebar-on-mobile {
     display: block;
     padding-top: 0px;
+  }
+  .af-view .af-class-post-content-2 {
+    padding: 20px;
   }
 }
 

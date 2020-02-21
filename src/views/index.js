@@ -3,6 +3,7 @@
 export { default as PostContentView } from './PostContentView'
 export { default as AboutView } from './AboutView'
 export { default as AllPostsView } from './AllPostsView'
+export { default as BlogView } from './BlogView'
 export { default as ContactView } from './ContactView'
 export { default as DetailCategoriesView } from './DetailCategoriesView'
 export { default as DetailPostsView } from './DetailPostsView'

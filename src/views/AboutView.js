@@ -64,7 +64,7 @@ class AboutView extends React.Component {
                 <a href="index.html" className="w-nav-brand">
                   <div className="af-class-site-name">Denali</div>
                 </a>
-                <nav role="navigation" className="af-class-navigation-menu w-nav-menu"><a href="index.html" className="af-class-navigation-link w-nav-link">Home</a><a href="about.html" className="af-class-navigation-link w-nav-link w--current">About</a><a href="contact.html" className="af-class-navigation-link w-nav-link">Contact</a></nav>
+                <nav role="navigation" className="af-class-navigation-menu w-nav-menu"><a href="index.html" className="af-class-navigation-link w-nav-link">Home</a><a href="about.html" className="af-class-navigation-link w-nav-link w--current">About</a><a href="blog.html" className="af-class-navigation-link w-nav-link">Blog</a><a href="contact.html" className="af-class-navigation-link w-nav-link">Contact</a></nav>
                 <div className="af-class-menu-button w-nav-button">
                   <div className="w-icon-nav-menu" />
                 </div>
