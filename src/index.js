@@ -6,16 +6,18 @@ import * as serviceWorker from './serviceWorker';
 import './styles';
 import './scripts';
 import IndexController from './controllers/IndexController';
-import AboutView from './views/AboutView';
-import ContactView from './views/ContactView';
+import AboutController from './controllers/AboutController';
+import ContactController from './controllers/ContactController';
+import BlogController from './controllers/BlogController';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={IndexController} />
       <Route exact path="/index.html" component={IndexController} />
-      <Route exact path="/contact.html" component={ContactView} />
-      <Route exact path="/about.html" component={AboutView} />
+      <Route exact path="/contact.html" component={ContactController} />
+      <Route exact path="/about.html" component={AboutController} />
+      <Route exact path="/blog.html" component={BlogController} />
     </Switch>
   </BrowserRouter>
   , document.getElementById('root'));
