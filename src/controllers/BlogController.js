@@ -33,7 +33,6 @@ export default class BlogController extends React.Component {
     title: null,
     date: null,
     image: null,
-    comments: null,
     content: null,
     errors: null,
   };
@@ -47,11 +46,10 @@ export default class BlogController extends React.Component {
       .post('', { query: GET_BLOG })
       .then(result => {
         let markdown = matter(result.data.data.repository.object.text)
-        let { title, date, image, comments } = markdown.data
+        let { title, date, image } = markdown.data
         this.setState(() => ({
           title,
           date,
-          comments,
           image: `https://github.com/JeffreyYu2018/personal-websitev1/blob/master/${image}`,
           content: markdown.content,
           errors: result.data.errors,
@@ -60,7 +58,7 @@ export default class BlogController extends React.Component {
   }
 
   render() {
-    const { title, date, image, comments, content } = this.state;
+    const { title, date, image, content } = this.state;
     console.log(date)
     return (
       <BlogView>

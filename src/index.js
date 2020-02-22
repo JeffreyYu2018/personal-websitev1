@@ -15,8 +15,11 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={IndexController} />
       <Route exact path="/index.html" component={IndexController} />
+      <Route exact path="contact" component={ContactController} />
       <Route exact path="/contact.html" component={ContactController} />
+      <Route exact path="/about" component={AboutController} />
       <Route exact path="/about.html" component={AboutController} />
+      <Route exact path="/blog" component={BlogController} />
       <Route exact path="/blog.html" component={BlogController} />
     </Switch>
   </BrowserRouter>
