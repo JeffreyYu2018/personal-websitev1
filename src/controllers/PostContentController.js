@@ -65,6 +65,10 @@ export default class PostContentController extends React.Component {
     return (
       <div>
         {posts.map((post, index) => {
+          console.log(post)
+          let { markdown } = matter(post.object.text)
+          let { title, date, image } = markdown.data
+          console.log(markdown.content)
           return (
             <PostContentView key={index}>
               <post-title>{post.name}</post-title>

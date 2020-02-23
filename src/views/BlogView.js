@@ -97,7 +97,7 @@ class BlogView extends React.Component {
                   <div className="af-class-content-column w-col w-col-9">
                     <div className="af-class-post-wrapper">
                       {map(proxies['post-image'], props => <div {...{...props, className: `af-class-blog-page-image ${props.className || ''}`}}>{props.children}</div>)}
-                      <div className="af-class-post-content">
+                      <div className="af-class-posts-list">
                         {map(proxies['blog-title'], props => <h1 {...props}>{props.children ? props.children : <React.Fragment>Heading</React.Fragment>}</h1>)}
                         <div className="af-class-details-wrapper">
                           {map(proxies['post-info'], props => <div {...{...props, className: `af-class-post-info ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>This is some text inside of a div block.</React.Fragment>}</div>)}

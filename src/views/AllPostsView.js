@@ -97,7 +97,7 @@ class AllPostsView extends React.Component {
                       <div className="w-dyn-items">
                         <div className="w-dyn-item">
                           <div className="af-class-post-wrapper">
-                            <div className="af-class-post-content">
+                            <div className="af-class-posts-list">
                               <div className="w-row">
                                 <div className="w-col w-col-4 w-col-medium-4"><a href="#" className="af-class-blog-image w-inline-block" /></div>
                                 <div className="w-col w-col-8 w-col-medium-8">

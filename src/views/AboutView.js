@@ -93,7 +93,7 @@ class AboutView extends React.Component {
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
                     <div className="af-class-post-wrapper">
-                      <div className="af-class-post-content">
+                      <div className="af-class-posts-list">
                         <div className="af-class-body-copy w-richtext">
                           <h1>About me</h1>
                           <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>

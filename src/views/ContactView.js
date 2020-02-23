@@ -93,7 +93,7 @@ class ContactView extends React.Component {
                   </div>
                   <div className="af-class-content-column w-col w-col-9">
                     <div className="af-class-post-wrapper">
-                      <div className="af-class-post-content">
+                      <div className="af-class-posts-list">
                         <div className="af-class-body-copy w-richtext">
                           <h1>Get in touch</h1>
                           <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>

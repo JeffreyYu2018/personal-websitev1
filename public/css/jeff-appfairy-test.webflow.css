@@ -339,7 +339,7 @@
   opacity: 0.8;
 }
 
-.af-view .af-class-post-content {
+.af-view .af-class-posts-list {
   margin-bottom: 30px;
   padding: 20px;
   background-color: #fff;
@@ -692,7 +692,7 @@
     margin-right: 0px;
     margin-bottom: 20px;
   }
-  .af-view .af-class-post-content {
+  .af-view .af-class-posts-list {
     padding: 20px;
   }
   .af-view .af-class-button-wrapper {

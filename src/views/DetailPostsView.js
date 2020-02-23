@@ -94,7 +94,7 @@ class DetailPostsView extends React.Component {
                   <div className="af-class-content-column w-col w-col-9">
                     <div className="af-class-post-wrapper">
                       <div className="af-class-blog-page-image" />
-                      <div className="af-class-post-content">
+                      <div className="af-class-posts-list">
                         <h1 />
                         <div className="af-class-details-wrapper">
                           <div className="af-class-post-info" />

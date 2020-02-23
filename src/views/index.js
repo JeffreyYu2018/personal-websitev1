@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-export { default as PostContentView } from './PostContentView'
+export { default as PostsListView } from './PostsListView'
 export { default as AboutView } from './AboutView'
 export { default as AllPostsView } from './AllPostsView'
 export { default as BlogView } from './BlogView'
