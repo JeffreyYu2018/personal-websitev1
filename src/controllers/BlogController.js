@@ -28,6 +28,26 @@ const GET_BLOG = `
   }
   `;
 
+const BlogComponent = ({ title, date, image, content, errors }) => {
+  if (errors) {
+    return (
+      <p>
+        <strong> Something went wrong:</strong>
+        {errors.map(error => error.message).join(' ')}
+      </p>
+    );
+  }
+
+  return (
+    <BlogView>
+      <post-image><img src={image} alt="Blog post"/></post-image>
+      <blog-title>{title}</blog-title>
+      <post-info></post-info>
+      <post-body><ReactMarkdown source={content} /> </post-body>
+    </BlogView>
+  )
+}
+
 export default class BlogController extends React.Component {
   state = {
     title: null,
@@ -58,15 +78,15 @@ export default class BlogController extends React.Component {
   }
 
   render() {
-    const { title, date, image, content } = this.state;
-    console.log(date)
+    const { title, date, image, content, errors } = this.state;
     return (
-      <BlogView>
-        <post-image><img src={image} alt="Blog post"/></post-image>
-        <blog-title>{title}</blog-title>
-        <post-info></post-info>
-        <post-body><ReactMarkdown source={content} /> </post-body>
-      </BlogView>
+      <BlogComponent
+        title={title}
+        date={date}
+        image={image}
+        content={content}
+        errors={errors}
+      />
     )
   }
 }
