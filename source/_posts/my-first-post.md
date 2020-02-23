@@ -1,7 +1,7 @@
 ---
 title: I LOVE BANANAS
 date: 2020-02-19T21:40:02.752Z
-image: public/images/Headshot.jpeg
+image: Headshot.jpeg
 comments: true
 ---
 Hello World! <normal>
