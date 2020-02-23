@@ -1,6 +1,7 @@
 import React from 'react'
 import BlogView from '../views/BlogView'
 import ReactMarkdown from 'react-markdown'
+import { IMGURL } from '../constants'
 
 // axios content for GitHubGraphQL API blog posts
 import axios from 'axios';
@@ -28,26 +29,6 @@ const GET_BLOG = `
   }
   `;
 
-const BlogComponent = ({ title, date, image, content, errors }) => {
-  if (errors) {
-    return (
-      <p>
-        <strong> Something went wrong:</strong>
-        {errors.map(error => error.message).join(' ')}
-      </p>
-    );
-  }
-
-  return (
-    <BlogView>
-      <post-image><img src={image} alt="Blog post"/></post-image>
-      <blog-title>{title}</blog-title>
-      <post-info></post-info>
-      <post-body><ReactMarkdown source={content} /> </post-body>
-    </BlogView>
-  )
-}
-
 export default class BlogController extends React.Component {
   state = {
     title: null,
@@ -70,7 +51,7 @@ export default class BlogController extends React.Component {
         this.setState(() => ({
           title,
           date,
-          image: `https://github.com/JeffreyYu2018/personal-websitev1/blob/master/${image}`,
+          image,
           content: markdown.content,
           errors: result.data.errors,
         }))
@@ -79,14 +60,23 @@ export default class BlogController extends React.Component {
 
   render() {
     const { title, date, image, content, errors } = this.state;
+    if (errors) {
+      return (
+        <p>
+          <strong> Something went wrong:</strong>
+          {errors.map(error => error.message).join(' ')}
+        </p>
+      );
+    }
     return (
-      <BlogComponent
-        title={title}
-        date={date}
-        image={image}
-        content={content}
-        errors={errors}
-      />
+      <BlogView>
+        <post-image>
+          <img src={`${IMGURL}${image}`} alt="Blog post" style={{objectFit:"cover"}} />
+        </post-image>
+        <blog-title>{title}</blog-title>
+        <post-info></post-info>
+        <post-body><ReactMarkdown source={content} /> </post-body>
+      </BlogView>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import PostsListView from '../views/PostsListView'
+import { IMGURL } from '../constants'
 // Markdown frontmatter parser
 import matter from 'gray-matter';
 
@@ -34,7 +35,11 @@ const GET_BLOG_HEADERS = `
   }
   `;
 
-const posttitles = ['one', 'two', 'three']
+export const makeDateIntoString = date => {
+    const t = date.split(/[-]/);
+    const d = new Date(t[0], t[1] - 1, t[2]);
+    return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`;
+  };
 
 export default class PostsListController extends React.Component {
   state = {
@@ -58,23 +63,38 @@ export default class PostsListController extends React.Component {
   }
 
   render() {
-    let { posts } = this.state;
-    posts.map((entry, index) => {
-      console.log(entry.name)
-    })
+    let { posts, errors } = this.state;
+    if (errors) {
+      return (
+        <p>
+          <strong> Something went wrong:</strong>
+          {errors.map(error => error.message).join(' ')}
+        </p>
+      );
+    } else if (!posts) {
+      return (
+        <p>
+          <strong>Loading posts...</strong>
+        </p>
+      )
+    }
     return (
       <div>
         {posts.map((post, index) => {
           console.log(post)
-          let { markdown } = matter(post.object.text)
-          // let { title, date, image } = markdown.data
-          // console.log(markdown.content)
+          let { data, content } = matter(post.object.text)
+          let { title, date, image } = data
+          let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
           return (
             <PostsListView key={index}>
-              <post-title>{post.name}</post-title>
-              <post-thumbnail />
-              <post-date />
-              <post-summary />
+              <post-title>{title}</post-title>
+              <post-thumbnail
+                src={`${IMGURL}${image}`}
+                alt="Blog post"
+                style={{objectFit:"cover"}}
+              />
+              <post-date>{date.toLocaleDateString(undefined, dateOptions)}</post-date>
+              <post-summary>{content}</post-summary>
             </PostsListView>
           )
         })}
