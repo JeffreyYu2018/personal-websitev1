@@ -1,5 +1,5 @@
 import React from 'react'
-import PostContentView from '../views/PostContentView'
+import PostsListView from '../views/PostsListView'
 // Markdown frontmatter parser
 import matter from 'gray-matter';
 
@@ -36,7 +36,7 @@ const GET_BLOG_HEADERS = `
 
 const posttitles = ['one', 'two', 'three']
 
-export default class PostContentController extends React.Component {
+export default class PostsListController extends React.Component {
   state = {
     posts: [],
     errors: null
@@ -67,15 +67,15 @@ export default class PostContentController extends React.Component {
         {posts.map((post, index) => {
           console.log(post)
           let { markdown } = matter(post.object.text)
-          let { title, date, image } = markdown.data
-          console.log(markdown.content)
+          // let { title, date, image } = markdown.data
+          // console.log(markdown.content)
           return (
-            <PostContentView key={index}>
+            <PostsListView key={index}>
               <post-title>{post.name}</post-title>
               <post-thumbnail />
               <post-date />
-              <post-content />
-            </PostContentView>
+              <post-summary />
+            </PostsListView>
           )
         })}
       </div>
