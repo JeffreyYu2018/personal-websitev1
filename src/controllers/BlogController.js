@@ -71,7 +71,8 @@ export default class BlogController extends React.Component {
     return (
       <BlogView>
         <post-image>
-          <img src={`${IMGURL}${image}`} alt="Blog post" style={{objectFit:"cover"}} />
+          <img
+            src={`${IMGURL}${image}`} alt="Blog post" style={{objectFit:"cover"}} />
         </post-image>
         <blog-title>{title}</blog-title>
         <post-info></post-info>
